@@ -79,7 +79,7 @@ with c1:
         if not st.session_state.is_running:
             if st.session_state.seconds <= 0:
                 st.session_state.reps += 1
-                st.session_state.seconds = 25*60 if st.session_state.reps % 2 != 0 else 5*60
+                st.session_state.seconds = 5 if st.session_state.reps % 2 != 0 else 3
             st.session_state.is_running = True
             st.rerun()
 with c2:
@@ -105,8 +105,7 @@ if st.session_state.is_running:
         
         # フェーズを切り替えて次の秒数をセット
         st.session_state.reps += 1
-        st.session_state.seconds = 25*60 if st.session_state.reps % 2 != 0 else 5*60
+        st.session_state.seconds = 5 if st.session_state.reps % 2 != 0 else 3
         
         # 自動で次のカウントダウンを開始
-
         st.rerun()
